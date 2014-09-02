@@ -617,7 +617,7 @@ Content-Type: text/html
 </head>
 <body> 
 It's been $days days, you avoided smoking $smoke cigarettes and saved $"$dollars".
-<img src=\"data:image/jpeg;base64,$jpg\" width=75% height 75% />
+<img src=\"data:image/jpeg;base64,$jpg\" />
 </body>
 </html>
 --simple--" | sendmail -t
