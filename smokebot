@@ -1,0 +1,39 @@
+#!/bin/bash
+
+###########################################
+##Add this script as a daily cron to get email stats on how much money you saved and how many cigarettes you didn't smoke.
+#Populate the following variables.
+
+#THE DAY YOU QUIT
+quit_date=20140823
+
+#SMOKE NUMBERS -- please note this script is not sophisticated and need integers(no decimals) for the numbers provided. If you smoke 1 pack per 1.5 days for example, you'll just have to round it up or down to either 1 or 2.
+pack_cost=14
+pack_size=25
+days_per_pack=1
+
+#MAIL SETTINGS
+mail_from=
+mail_from_name="SmokeBot"
+mail_to=
+###########################################
+
+
+
+
+d=`date +%Y%m%d`
+let days=(`date +%s -d $d`-`date +%s -d $quit_date`)/86400
+smoke=$(($days * $pack_size ))
+dollars=$(($days / $days_per_pack * $pack_cost))
+
+HEAD="FROM: $mail_from_name <$mail_from> 
+TO:$mail_to
+SUBJECT: No smokes in $days days, $"$dollars" saved, $smoke cigarettes not smoked
+
+";
+
+
+echo -e "$HEAD
+It's been $DIFF days, you avoided smoking $smoke cigarettes and saved $"$dollars".
+"|sendmail -t;
+
