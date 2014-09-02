@@ -7,7 +7,7 @@
 #THE DAY YOU QUIT
 quit_date=20140823
 
-#SMOKE NUMBERS -- please note this script is not sophisticated and need integers(no decimals) for the numbers provided. If you smoke 1 pack per 1.5 days for example, you'll just have to round it up or down to either 1 or 2.
+#SMOKE NUMBERS -- please note this script is not sophisticated and needs integers(no decimals) for the numbers provided. If you smoke 1 pack per 1.5 days for example, you'll just have to round it up or down to either 1 or 2.
 pack_cost=14
 pack_size=25
 days_per_pack=1
